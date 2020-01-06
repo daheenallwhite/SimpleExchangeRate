@@ -116,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				C20200A223BE210000C83D3F /* SimpleExchangeRate */,
-				C20200B123BE210500C83D3F /* Info.plist */,
 				C20200A123BE210000C83D3F /* Products */,
 				DEF02A0F9DE6F4A713964D85 /* Pods */,
 				8E6D526071C8CAE22586942D /* Frameworks */,
@@ -134,6 +133,7 @@
 		C20200A223BE210000C83D3F /* SimpleExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				C20200B123BE210500C83D3F /* Info.plist */,
 				C20200A323BE210000C83D3F /* AppDelegate.swift */,
 				43F4B0F123C30BF50089292D /* AppComponent.swift */,
 				43F4B0E823C30B840089292D /* Root */,
