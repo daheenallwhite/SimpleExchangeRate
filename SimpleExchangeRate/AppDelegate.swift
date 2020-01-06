@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RIBs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
+    // MARK: - Private
+    
+    private var launchRouter: LaunchRouting?
 }
 
