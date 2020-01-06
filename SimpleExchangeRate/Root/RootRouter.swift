@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol RootInteractable: Interactable {
+protocol RootInteractable: Interactable, HomeListener {
     var router: RootRouting? { get set }
     var listener: RootListener? { get set }
 }
@@ -19,9 +19,20 @@ protocol RootViewControllable: ViewControllable {
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
 
+    private let homeBuilder: HomeBuildable
+    
     // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: RootInteractable, viewController: RootViewControllable) {
+    init(interactor: RootInteractable,
+                  viewController: RootViewControllable,
+                  homeBuilder: HomeBuildable) {
+        self.homeBuilder = homeBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
+    }
+    
+    func routeToHome() {
+        let homeRouter = homeBuilder.build(withListener: interactor)
+        attachChild(homeRouter)
+        viewController.replace(viewController: homeRouter.viewControllable)
     }
 }

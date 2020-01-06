@@ -11,12 +11,20 @@ import RxSwift
 import UIKit
 
 protocol RootPresentableListener: class {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func viewDidAppear()
 }
 
 final class RootViewController: UIViewController, RootPresentable, RootViewControllable {
 
     weak var listener: RootPresentableListener?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .gray
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        listener?.viewDidAppear() // launching 할 때 root vc 안씹히게 하는 용도
+    }
 }
