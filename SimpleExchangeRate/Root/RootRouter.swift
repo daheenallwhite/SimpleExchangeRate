@@ -33,6 +33,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     func routeToHome() {
         let homeRouter = homeBuilder.build(withListener: interactor)
         attachChild(homeRouter)
-        viewController.replace(viewController: homeRouter.viewControllable)
+        let containerVC = UINavigationController(rootViewController: homeRouter.viewControllable.uiviewController)
+        viewController.replace(viewController: containerVC)
     }
 }
