@@ -9,6 +9,7 @@
 import Foundation
 
 enum CurrencyCode: String, CaseIterable {
+    case USD
     case AED
     case ARS
     case AUD
@@ -57,7 +58,6 @@ enum CurrencyCode: String, CaseIterable {
     case TRY
     case TWD
     case UAH
-    case USD
     case UYU
     case VND
     case ZAR
