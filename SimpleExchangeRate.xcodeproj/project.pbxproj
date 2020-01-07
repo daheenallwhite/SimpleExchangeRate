@@ -23,8 +23,7 @@
 		C20200AB23BE210000C83D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20200A923BE210000C83D3F /* Main.storyboard */; };
 		C20200AD23BE210500C83D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20200AC23BE210500C83D3F /* Assets.xcassets */; };
 		C20200B023BE210500C83D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20200AE23BE210500C83D3F /* LaunchScreen.storyboard */; };
-		C20200BA23BE243A00C83D3F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200B923BE243A00C83D3F /* API.swift */; };
-		C20200BC23BE252400C83D3F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200BB23BE252400C83D3F /* Network.swift */; };
+		C20200BC23BE252400C83D3F /* ExchangeRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200BB23BE252400C83D3F /* ExchangeRateAPI.swift */; };
 		C20200BF23BE345F00C83D3F /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200BE23BE345F00C83D3F /* ResultData.swift */; };
 		C20200C223BE34DB00C83D3F /* CurrencyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200C123BE34DB00C83D3F /* CurrencyCode.swift */; };
 		C20200C423BE352600C83D3F /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200C323BE352600C83D3F /* Rate.swift */; };
@@ -52,8 +51,7 @@
 		C20200AC23BE210500C83D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C20200AF23BE210500C83D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C20200B123BE210500C83D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C20200B923BE243A00C83D3F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		C20200BB23BE252400C83D3F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		C20200BB23BE252400C83D3F /* ExchangeRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAPI.swift; sourceTree = "<group>"; };
 		C20200BE23BE345F00C83D3F /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		C20200C123BE34DB00C83D3F /* CurrencyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCode.swift; sourceTree = "<group>"; };
 		C20200C323BE352600C83D3F /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
@@ -159,8 +157,7 @@
 		C20200C023BE34C900C83D3F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C20200BB23BE252400C83D3F /* Network.swift */,
-				C20200B923BE243A00C83D3F /* API.swift */,
+				C20200BB23BE252400C83D3F /* ExchangeRateAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -300,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43F4B0ED23C30B9E0089292D /* RootRouter.swift in Sources */,
-				C20200BC23BE252400C83D3F /* Network.swift in Sources */,
+				C20200BC23BE252400C83D3F /* ExchangeRateAPI.swift in Sources */,
 				43F4B0F023C30B9E0089292D /* RootInteractor.swift in Sources */,
 				43F4B10223C329CE0089292D /* UIViewController.swift in Sources */,
 				43F4B0FB23C325D70089292D /* HomeInteractor.swift in Sources */,
@@ -315,7 +312,6 @@
 				43F4B0EF23C30B9E0089292D /* RootBuilder.swift in Sources */,
 				43F4B0FA23C325D70089292D /* HomeBuilder.swift in Sources */,
 				43F4B0FD23C327500089292D /* RootComponent+Home.swift in Sources */,
-				C20200BA23BE243A00C83D3F /* API.swift in Sources */,
 				C20200A423BE210000C83D3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
