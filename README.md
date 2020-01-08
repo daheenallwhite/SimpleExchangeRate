@@ -8,11 +8,13 @@
 
 [Exchange Rate API (no key required)](https://www.exchangerate-api.com/docs/documentation)
 
-
+&nbsp;
 
 ## RIBs Tree 
 
+![](./resource/RIBs_tree.png)
 
+&nbsp;
 
 ## To Do
 
