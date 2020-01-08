@@ -12,22 +12,29 @@
 		43F4B0EF23C30B9E0089292D /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0EB23C30B9E0089292D /* RootBuilder.swift */; };
 		43F4B0F023C30B9E0089292D /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0EC23C30B9E0089292D /* RootInteractor.swift */; };
 		43F4B0F223C30BF50089292D /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F123C30BF50089292D /* AppComponent.swift */; };
-		43F4B0F823C325D70089292D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F423C325D70089292D /* HomeRouter.swift */; };
-		43F4B0F923C325D70089292D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F523C325D70089292D /* HomeViewController.swift */; };
-		43F4B0FA23C325D70089292D /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F623C325D70089292D /* HomeBuilder.swift */; };
-		43F4B0FB23C325D70089292D /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F723C325D70089292D /* HomeInteractor.swift */; };
+		43F4B0F823C325D70089292D /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F423C325D70089292D /* LoggedInRouter.swift */; };
+		43F4B0F923C325D70089292D /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F523C325D70089292D /* LoggedInViewController.swift */; };
+		43F4B0FA23C325D70089292D /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F623C325D70089292D /* LoggedInBuilder.swift */; };
+		43F4B0FB23C325D70089292D /* LoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0F723C325D70089292D /* LoggedInInteractor.swift */; };
 		43F4B0FD23C327500089292D /* RootComponent+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0FC23C327500089292D /* RootComponent+Home.swift */; };
 		43F4B10023C327FC0089292D /* ViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B0FF23C327FC0089292D /* ViewControllable.swift */; };
 		43F4B10223C329CE0089292D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B10123C329CE0089292D /* UIViewController.swift */; };
 		43F4B10623C45A9A0089292D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4B10523C45A9A0089292D /* HomeViewModel.swift */; };
 		C20200A423BE210000C83D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200A323BE210000C83D3F /* AppDelegate.swift */; };
-		C20200AB23BE210000C83D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20200A923BE210000C83D3F /* Main.storyboard */; };
 		C20200AD23BE210500C83D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20200AC23BE210500C83D3F /* Assets.xcassets */; };
 		C20200B023BE210500C83D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20200AE23BE210500C83D3F /* LaunchScreen.storyboard */; };
 		C20200BC23BE252400C83D3F /* ExchangeRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200BB23BE252400C83D3F /* ExchangeRateAPI.swift */; };
 		C20200BF23BE345F00C83D3F /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200BE23BE345F00C83D3F /* ResultData.swift */; };
 		C20200C223BE34DB00C83D3F /* CurrencyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200C123BE34DB00C83D3F /* CurrencyCode.swift */; };
 		C20200C423BE352600C83D3F /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200C323BE352600C83D3F /* Rate.swift */; };
+		C2A8882223C6156500321BCC /* BasePickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8881E23C6156500321BCC /* BasePickerRouter.swift */; };
+		C2A8882323C6156500321BCC /* BasePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8881F23C6156500321BCC /* BasePickerViewController.swift */; };
+		C2A8882423C6156500321BCC /* BasePickerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8882023C6156500321BCC /* BasePickerBuilder.swift */; };
+		C2A8882523C6156500321BCC /* BasePickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8882123C6156500321BCC /* BasePickerInteractor.swift */; };
+		C2A8882723C615E200321BCC /* LoggedInComponent+BasePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8882623C615E200321BCC /* LoggedInComponent+BasePicker.swift */; };
+		C2A8882923C615F300321BCC /* LoggedInComponent+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8882823C615F300321BCC /* LoggedInComponent+Search.swift */; };
+		C2A8882B23C6177C00321BCC /* LoggedInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A8882A23C6177C00321BCC /* LoggedInView.storyboard */; };
+		C2A8882D23C6195500321BCC /* BasePickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A8882C23C6195500321BCC /* BasePickerView.storyboard */; };
 		DAD886EDF182CB13C6AD6AFD /* Pods_SimpleExchangeRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDFE648714D3D0474C20DB1 /* Pods_SimpleExchangeRate.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,10 +44,10 @@
 		43F4B0EB23C30B9E0089292D /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		43F4B0EC23C30B9E0089292D /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		43F4B0F123C30BF50089292D /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
-		43F4B0F423C325D70089292D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		43F4B0F523C325D70089292D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		43F4B0F623C325D70089292D /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
-		43F4B0F723C325D70089292D /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		43F4B0F423C325D70089292D /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
+		43F4B0F523C325D70089292D /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
+		43F4B0F623C325D70089292D /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
+		43F4B0F723C325D70089292D /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
 		43F4B0FC23C327500089292D /* RootComponent+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+Home.swift"; sourceTree = "<group>"; };
 		43F4B0FF23C327FC0089292D /* ViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllable.swift; sourceTree = "<group>"; };
 		43F4B10123C329CE0089292D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +56,6 @@
 		AF165D49735C199B39E10477 /* Pods-SimpleExchangeRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleExchangeRate.debug.xcconfig"; path = "Target Support Files/Pods-SimpleExchangeRate/Pods-SimpleExchangeRate.debug.xcconfig"; sourceTree = "<group>"; };
 		C20200A023BE210000C83D3F /* SimpleExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20200A323BE210000C83D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C20200AA23BE210000C83D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C20200AC23BE210500C83D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C20200AF23BE210500C83D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C20200B123BE210500C83D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +63,14 @@
 		C20200BE23BE345F00C83D3F /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		C20200C123BE34DB00C83D3F /* CurrencyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCode.swift; sourceTree = "<group>"; };
 		C20200C323BE352600C83D3F /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		C2A8881E23C6156500321BCC /* BasePickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerRouter.swift; sourceTree = "<group>"; };
+		C2A8881F23C6156500321BCC /* BasePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerViewController.swift; sourceTree = "<group>"; };
+		C2A8882023C6156500321BCC /* BasePickerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerBuilder.swift; sourceTree = "<group>"; };
+		C2A8882123C6156500321BCC /* BasePickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerInteractor.swift; sourceTree = "<group>"; };
+		C2A8882623C615E200321BCC /* LoggedInComponent+BasePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+BasePicker.swift"; sourceTree = "<group>"; };
+		C2A8882823C615F300321BCC /* LoggedInComponent+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+Search.swift"; sourceTree = "<group>"; };
+		C2A8882A23C6177C00321BCC /* LoggedInView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoggedInView.storyboard; sourceTree = "<group>"; };
+		C2A8882C23C6195500321BCC /* BasePickerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasePickerView.storyboard; sourceTree = "<group>"; };
 		F515D9D04B96FD781D592FBB /* Pods-SimpleExchangeRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleExchangeRate.release.xcconfig"; path = "Target Support Files/Pods-SimpleExchangeRate/Pods-SimpleExchangeRate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,15 +98,18 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		43F4B0F323C325BE0089292D /* Home */ = {
+		43F4B0F323C325BE0089292D /* LoggedIn */ = {
 			isa = PBXGroup;
 			children = (
-				43F4B0F423C325D70089292D /* HomeRouter.swift */,
-				43F4B0F523C325D70089292D /* HomeViewController.swift */,
-				43F4B0F623C325D70089292D /* HomeBuilder.swift */,
-				43F4B0F723C325D70089292D /* HomeInteractor.swift */,
+				43F4B0F423C325D70089292D /* LoggedInRouter.swift */,
+				43F4B0F523C325D70089292D /* LoggedInViewController.swift */,
+				C2A8882A23C6177C00321BCC /* LoggedInView.storyboard */,
+				43F4B0F623C325D70089292D /* LoggedInBuilder.swift */,
+				43F4B0F723C325D70089292D /* LoggedInInteractor.swift */,
+				C2A8882623C615E200321BCC /* LoggedInComponent+BasePicker.swift */,
+				C2A8882823C615F300321BCC /* LoggedInComponent+Search.swift */,
 			);
-			path = Home;
+			path = LoggedIn;
 			sourceTree = "<group>";
 		};
 		43F4B0FE23C327EA0089292D /* Extension */ = {
@@ -137,7 +154,8 @@
 				C20200A323BE210000C83D3F /* AppDelegate.swift */,
 				43F4B0F123C30BF50089292D /* AppComponent.swift */,
 				43F4B0E823C30B840089292D /* Root */,
-				43F4B0F323C325BE0089292D /* Home */,
+				43F4B0F323C325BE0089292D /* LoggedIn */,
+				C2A8881D23C614D200321BCC /* BasePicker */,
 				C20200C523BE356300C83D3F /* Resource */,
 				C20200C023BE34C900C83D3F /* Network */,
 				C20200BD23BE345500C83D3F /* Model */,
@@ -170,9 +188,20 @@
 			children = (
 				C20200AC23BE210500C83D3F /* Assets.xcassets */,
 				C20200AE23BE210500C83D3F /* LaunchScreen.storyboard */,
-				C20200A923BE210000C83D3F /* Main.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		C2A8881D23C614D200321BCC /* BasePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C2A8881E23C6156500321BCC /* BasePickerRouter.swift */,
+				C2A8882023C6156500321BCC /* BasePickerBuilder.swift */,
+				C2A8882123C6156500321BCC /* BasePickerInteractor.swift */,
+				C2A8881F23C6156500321BCC /* BasePickerViewController.swift */,
+				C2A8882C23C6195500321BCC /* BasePickerView.storyboard */,
+			);
+			path = BasePicker;
 			sourceTree = "<group>";
 		};
 		DEF02A0F9DE6F4A713964D85 /* Pods */ = {
@@ -244,9 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A8882D23C6195500321BCC /* BasePickerView.storyboard in Resources */,
 				C20200B023BE210500C83D3F /* LaunchScreen.storyboard in Resources */,
 				C20200AD23BE210500C83D3F /* Assets.xcassets in Resources */,
-				C20200AB23BE210000C83D3F /* Main.storyboard in Resources */,
+				C2A8882B23C6177C00321BCC /* LoggedInView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,21 +330,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				43F4B0ED23C30B9E0089292D /* RootRouter.swift in Sources */,
+				C2A8882723C615E200321BCC /* LoggedInComponent+BasePicker.swift in Sources */,
 				43F4B10623C45A9A0089292D /* HomeViewModel.swift in Sources */,
 				C20200BC23BE252400C83D3F /* ExchangeRateAPI.swift in Sources */,
 				43F4B0F023C30B9E0089292D /* RootInteractor.swift in Sources */,
 				43F4B10223C329CE0089292D /* UIViewController.swift in Sources */,
-				43F4B0FB23C325D70089292D /* HomeInteractor.swift in Sources */,
+				C2A8882923C615F300321BCC /* LoggedInComponent+Search.swift in Sources */,
+				43F4B0FB23C325D70089292D /* LoggedInInteractor.swift in Sources */,
+				C2A8882223C6156500321BCC /* BasePickerRouter.swift in Sources */,
 				43F4B0EE23C30B9E0089292D /* RootViewController.swift in Sources */,
 				C20200C423BE352600C83D3F /* Rate.swift in Sources */,
-				43F4B0F923C325D70089292D /* HomeViewController.swift in Sources */,
+				C2A8882323C6156500321BCC /* BasePickerViewController.swift in Sources */,
+				43F4B0F923C325D70089292D /* LoggedInViewController.swift in Sources */,
 				43F4B10023C327FC0089292D /* ViewControllable.swift in Sources */,
 				43F4B0F223C30BF50089292D /* AppComponent.swift in Sources */,
-				43F4B0F823C325D70089292D /* HomeRouter.swift in Sources */,
+				43F4B0F823C325D70089292D /* LoggedInRouter.swift in Sources */,
+				C2A8882423C6156500321BCC /* BasePickerBuilder.swift in Sources */,
 				C20200C223BE34DB00C83D3F /* CurrencyCode.swift in Sources */,
 				C20200BF23BE345F00C83D3F /* ResultData.swift in Sources */,
+				C2A8882523C6156500321BCC /* BasePickerInteractor.swift in Sources */,
 				43F4B0EF23C30B9E0089292D /* RootBuilder.swift in Sources */,
-				43F4B0FA23C325D70089292D /* HomeBuilder.swift in Sources */,
+				43F4B0FA23C325D70089292D /* LoggedInBuilder.swift in Sources */,
 				43F4B0FD23C327500089292D /* RootComponent+Home.swift in Sources */,
 				C20200A423BE210000C83D3F /* AppDelegate.swift in Sources */,
 			);
@@ -323,14 +359,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C20200A923BE210000C83D3F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C20200AA23BE210000C83D3F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C20200AE23BE210500C83D3F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

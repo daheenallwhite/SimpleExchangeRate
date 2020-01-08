@@ -10,7 +10,7 @@ import RIBs
 import RxSwift
 
 protocol RootRouting: ViewableRouting {
-    func routeToHome()
+    func routeToLoggedIn()
 }
 
 protocol RootPresentable: Presentable {
@@ -50,7 +50,7 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     func viewDidAppear() {
         if isFirstTimeLaunch {
             isFirstTimeLaunch.toggle()
-            router?.routeToHome()
+            router?.routeToLoggedIn()
         }
     }
 }

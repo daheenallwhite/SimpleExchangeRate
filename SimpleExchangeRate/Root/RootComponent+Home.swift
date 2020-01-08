@@ -15,7 +15,7 @@ protocol RootDependencyHome: Dependency {
     // for the Home scope.
 }
 
-extension RootComponent: HomeDependency {
+extension RootComponent: LoggedInDependency {
 
     // TODO: Implement properties to provide for Home scope.
 }

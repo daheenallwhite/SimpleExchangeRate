@@ -1,5 +1,5 @@
 //
-//  HomeInteractor.swift
+//  LoggedInInteractor.swift
 //  SimpleExchangeRate
 //
 //  Created by dana.allwhite on 2020/01/06.
@@ -9,27 +9,27 @@
 import RIBs
 import RxSwift
 
-protocol HomeRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+protocol LoggedInRouting: ViewableRouting {
+    func routeToBasePicker()
 }
 
-protocol HomePresentable: Presentable {
-    var listener: HomePresentableListener? { get set }
+protocol LoggedInPresentable: Presentable {
+    var listener: LoggedInPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol HomeListener: class {
+protocol LoggedInListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteractable, HomePresentableListener {
+final class LoggedInInteractor: PresentableInteractor<LoggedInPresentable>, LoggedInInteractable, LoggedInPresentableListener {
 
-    weak var router: HomeRouting?
-    weak var listener: HomeListener?
+    weak var router: LoggedInRouting?
+    weak var listener: LoggedInListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: HomePresentable) {
+    override init(presenter: LoggedInPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -43,4 +43,17 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func didSelectBasePicker() {
+        router?.routeToBasePicker()
+    }
+    
+    func didSelectSearch() {
+        
+    }
+    
+    func didSelectConversion() {
+        
+    }
+    
 }

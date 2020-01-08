@@ -32,7 +32,8 @@ struct HomeViewModel {
         
         self.selectedCurrencyRates = successData
             .map { data -> [Rate] in
-                return data.rates ?? []
+                guard let rates = data.rates else { return [] }
+                return rates.sorted { $0.code < $1.code }
         }.asDriver(onErrorJustReturn: [])
         
         self.lastUpdatedTime = successData
