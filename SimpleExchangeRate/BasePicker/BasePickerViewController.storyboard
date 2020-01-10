@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,8 +26,8 @@
                                         </constraints>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6k-uk-dvJ" userLabel="Updated Time">
-                                        <rect key="frame" x="186" y="43.5" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="187.5" y="48.5" width="39.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -35,7 +35,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="lwM-B2-A3x" secondAttribute="trailing" id="1ey-ox-crh"/>
-                                    <constraint firstItem="lwM-B2-A3x" firstAttribute="top" secondItem="F6k-uk-dvJ" secondAttribute="bottom" constant="8" id="8h6-mR-zIf"/>
+                                    <constraint firstItem="lwM-B2-A3x" firstAttribute="top" secondItem="F6k-uk-dvJ" secondAttribute="bottom" constant="4" id="8h6-mR-zIf"/>
                                     <constraint firstItem="lwM-B2-A3x" firstAttribute="leading" secondItem="Pmn-2a-8wp" secondAttribute="leading" id="D09-Od-tms"/>
                                     <constraint firstAttribute="bottom" secondItem="lwM-B2-A3x" secondAttribute="bottom" id="FcV-Sd-P73"/>
                                     <constraint firstItem="F6k-uk-dvJ" firstAttribute="centerX" secondItem="Pmn-2a-8wp" secondAttribute="centerX" id="iJM-8J-i2i"/>

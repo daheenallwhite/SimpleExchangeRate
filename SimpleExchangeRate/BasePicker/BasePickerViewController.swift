@@ -21,7 +21,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     weak var listener: BasePickerPresentableListener?
 
     static func instantiate() -> BasePickerViewController {
-        let instance = instantiate(storyboardName: "BasePickerView", identifier: "BasePickerViewController") as! BasePickerViewController
+        let instance = instantiate(storyboardName: "BasePickerViewController", identifier: "BasePickerViewController") as! BasePickerViewController
         return instance
     }
     
@@ -32,7 +32,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     private let exchangeRateAPI = ExchangeRateAPI.shared
     private let allCurrencyCodes = CurrencyCode.allCases
     private let bag = DisposeBag()
-    private let viewModel = HomeViewModel()
+    private let viewModel = BasePickerViewModel()
        
     override func viewDidLoad() {
         super.viewDidLoad()

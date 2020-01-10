@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-struct HomeViewModel {
+struct BasePickerViewModel {
     let baseCurrencySelected: BehaviorRelay<CurrencyCode> = BehaviorRelay(value: .USD)
     let selectedCurrencyRates: Driver<[Rate]>
     let lastUpdatedTime: Driver<String>

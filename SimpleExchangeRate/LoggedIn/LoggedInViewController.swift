@@ -28,7 +28,7 @@ final class LoggedInViewController: UIViewController, LoggedInPresentable, Logge
     private let menu = ["BasePicker", "Search", "Conversion"]
     
     static func instantiate() -> LoggedInViewController {
-        let instance = instantiate(storyboardName: "LoggedInView", identifier: "LoggedInViewController") as! LoggedInViewController
+        let instance = instantiate(storyboardName: "LoggedInViewController", identifier: "LoggedInViewController") as! LoggedInViewController
         return instance
     }
     
