@@ -17,6 +17,10 @@ protocol BasePickerPresentableListener: class {
 }
 
 final class BasePickerViewController: UIViewController, BasePickerPresentable, BasePickerViewControllable {
+    
+    var viewWillAppear: Observable<Bool> {
+        return self.rx.viewWillAppear
+    }
 
     weak var listener: BasePickerPresentableListener?
 
@@ -36,6 +40,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Observable.just(allCurrencyCodes)
                .bind(to: pickerView.rx.itemTitles) { _, code in
                    return code.rawValue

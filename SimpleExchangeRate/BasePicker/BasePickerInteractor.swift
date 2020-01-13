@@ -15,6 +15,7 @@ protocol BasePickerRouting: ViewableRouting {
 
 protocol BasePickerPresentable: Presentable {
     var listener: BasePickerPresentableListener? { get set }
+    var viewWillAppear: Observable<Bool> { get }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
@@ -26,12 +27,18 @@ final class BasePickerInteractor: PresentableInteractor<BasePickerPresentable>, 
 
     weak var router: BasePickerRouting?
     weak var listener: BasePickerListener?
+    let viewModel = BasePickerViewModel()
+    let disposeBag = DisposeBag()
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     override init(presenter: BasePickerPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
+        presenter.viewWillAppear
+            .map { _ in Void() }
+            .bind(to: viewModel.viewWillAppear)
+            .disposed(by: disposeBag)
     }
 
     override func didBecomeActive() {
