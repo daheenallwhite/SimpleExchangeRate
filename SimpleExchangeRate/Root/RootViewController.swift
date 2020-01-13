@@ -11,20 +11,19 @@ import RxSwift
 import UIKit
 
 protocol RootPresentableListener: class {
-    func viewDidAppear()
+    
 }
 
 final class RootViewController: UIViewController, RootPresentable, RootViewControllable {
-
+    
+    var viewDidAppear: Observable<Bool> {
+        return self.rx.viewDidAppear
+    }
+    
     weak var listener: RootPresentableListener?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        listener?.viewDidAppear() // launching 할 때 root vc 안씹히게 하는 용도
     }
 }

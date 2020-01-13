@@ -15,6 +15,7 @@ protocol RootRouting: ViewableRouting {
 
 protocol RootPresentable: Presentable {
     var listener: RootPresentableListener? { get set }
+    var viewDidAppear: Observable<Bool> { get }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
@@ -28,12 +29,20 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     weak var listener: RootListener?
     
     private var isFirstTimeLaunch = true
+    private var bag = DisposeBag()
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     override init(presenter: RootPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
+        presenter.viewDidAppear
+            .bind { bool in
+                if bool && self.isFirstTimeLaunch {
+                    self.isFirstTimeLaunch.toggle()
+                    self.router?.routeToLoggedIn()
+                }
+            }.disposed(by: bag)
     }
 
     override func didBecomeActive() {
@@ -46,11 +55,4 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         // TODO: Pause any business logic.
     }
     
-    // MARK: - RootPresentableListener
-    func viewDidAppear() {
-        if isFirstTimeLaunch {
-            isFirstTimeLaunch.toggle()
-            router?.routeToLoggedIn()
-        }
-    }
 }
