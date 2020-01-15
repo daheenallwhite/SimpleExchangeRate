@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxAppState
 import UIKit
 
 protocol BasePickerPresentableListener: class {
@@ -34,37 +35,36 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     @IBOutlet weak var tableView: UITableView!
     
     private let exchangeRateAPI = ExchangeRateAPI.shared
-    private let allCurrencyCodes = CurrencyCode.allCases
     private let bag = DisposeBag()
     private let viewModel = BasePickerViewModel()
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        Observable.just(CurrencyCode.allCases)
+            .bind(to: pickerView.rx.itemTitles) { _, code in
+                return code.rawValue
+            }.disposed(by: bag)
         
-        Observable.just(allCurrencyCodes)
-               .bind(to: pickerView.rx.itemTitles) { _, code in
-                   return code.rawValue
-               }
-               .disposed(by: bag)
-               
-       pickerView.rx.modelSelected(CurrencyCode.self)
-           .map { (codes) -> CurrencyCode in
-               return codes[0]
-           }.bind(to: viewModel.baseCurrencySelected)
-           .disposed(by: bag)
-           
-       
-       viewModel.selectedCurrencyRates
-           .drive(tableView.rx.items(cellIdentifier: "Cell")){ row, model, cell in
-           cell.detailTextLabel?.text = model.rate
-           cell.textLabel?.text = model.code
-           
-       }.disposed(by: bag)
-       
-       viewModel.lastUpdatedTime
-           .drive(onNext: { (string) in
-               self.timeLabel.text = string
-           }).disposed(by: bag)
+        pickerView.rx.modelSelected(CurrencyCode.self)
+            .map { (codes) -> CurrencyCode in
+                return codes[0]
+            }.bind(to: viewModel.baseCurrencySelected)
+            .disposed(by: bag)
+        
+        viewModel.lastUpdatedTime
+        .drive(onNext: { time in
+            self.timeLabel.text = time
+        }).disposed(by: bag)
    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.selectedCurrencyRates
+            .drive(tableView.rx.items(cellIdentifier: "Cell")){ row, model, cell in
+            cell.detailTextLabel?.text = model.rate
+            cell.textLabel?.text = model.code
+        }.disposed(by: bag)
+    }
     
 }
