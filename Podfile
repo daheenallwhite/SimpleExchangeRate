@@ -9,6 +9,6 @@ pod 'RIBs', git: 'https://github.com/uber/RIBs.git', branch: 'master', submodule
 pod 'RxSwift', '~> 5'
 pod 'RxCocoa', '~> 5'
 pod 'RxDataSources', '~> 4.0'
-pod "RxAppState"
+pod 'RxAppState'
 
 end

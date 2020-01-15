@@ -36,7 +36,9 @@ final class BasePickerInteractor: PresentableInteractor<BasePickerPresentable>, 
         super.init(presenter: presenter)
         presenter.listener = self
         presenter.viewWillAppear
-            .map { _ in Void() }
+            .filter {
+                return $0
+            }
             .bind(to: viewModel.viewWillAppear)
             .disposed(by: disposeBag)
     }
