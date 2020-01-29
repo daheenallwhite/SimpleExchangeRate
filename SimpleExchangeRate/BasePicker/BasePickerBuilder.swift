@@ -14,8 +14,12 @@ protocol BasePickerDependency: Dependency {
 }
 
 final class BasePickerComponent: Component<BasePickerDependency> {
-
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    var viewModel: BasePickerViewModel
+    
+    override init(dependency: BasePickerDependency) {
+        self.viewModel = BasePickerViewModel()
+        super.init(dependency: dependency)
+    }
 }
 
 // MARK: - Builder
@@ -32,8 +36,9 @@ final class BasePickerBuilder: Builder<BasePickerDependency>, BasePickerBuildabl
 
     func build(withListener listener: BasePickerListener) -> BasePickerRouting {
         let component = BasePickerComponent(dependency: dependency)
-        let viewController = BasePickerViewController.instantiate()
-        let interactor = BasePickerInteractor(presenter: viewController)
+        let viewController = BasePickerViewController.instantiate(with: component.viewModel)
+        let interactor = BasePickerInteractor(presenter: viewController,
+                                              viewModel: component.viewModel)
         interactor.listener = listener
         return BasePickerRouter(interactor: interactor, viewController: viewController)
     }
