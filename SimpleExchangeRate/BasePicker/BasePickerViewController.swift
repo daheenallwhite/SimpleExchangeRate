@@ -40,6 +40,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Observable.just(CurrencyCode.allCases)
             .bind(to: pickerView.rx.itemTitles) { _, code in
                 return code.rawValue
@@ -48,7 +49,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
         pickerView.rx.modelSelected(CurrencyCode.self)
             .map { (codes) -> CurrencyCode in
                 return codes[0]
-            }.bind(to: viewModel.baseCurrencySelected)
+            }.bind(to: viewModel.baseCurrencyCode)
             .disposed(by: bag)
         
         viewModel.lastUpdatedTime
@@ -60,7 +61,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewModel.selectedCurrencyRates
+        viewModel.exchangeRates
             .drive(tableView.rx.items(cellIdentifier: "Cell")){ row, model, cell in
             cell.detailTextLabel?.text = model.rate
             cell.textLabel?.text = model.code

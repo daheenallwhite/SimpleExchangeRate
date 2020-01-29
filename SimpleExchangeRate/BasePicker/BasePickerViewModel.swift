@@ -12,8 +12,8 @@ import RxSwift
 
 struct BasePickerViewModel {
     let viewWillAppear = PublishSubject<Bool>()
-    let baseCurrencySelected: BehaviorRelay<CurrencyCode> = BehaviorRelay(value: .USD)
-    let selectedCurrencyRates: Driver<[Rate]>
+    let baseCurrencyCode: BehaviorRelay<CurrencyCode> = BehaviorRelay(value: .USD)
+    let exchangeRates: Driver<[Rate]>
     let lastUpdatedTime: Driver<String>
 //    let errorMessage: Signal<String>
     
@@ -28,7 +28,7 @@ struct BasePickerViewModel {
                 return CurrencyCode.USD
             }
         
-        let dataStream = Observable.of(viewAppearDefault, baseCurrencySelected.asObservable()).merge()
+        let dataStream = Observable.of(viewAppearDefault, baseCurrencyCode.asObservable()).merge()
         
         let result = dataStream
             .flatMapLatest(exchangeRateAPI.getRates(for:))
@@ -41,7 +41,7 @@ struct BasePickerViewModel {
                return value
             }
         
-        self.selectedCurrencyRates = successData
+        self.exchangeRates = successData
             .map { data -> [Rate] in
                 guard let rates = data.rates else { return [] }
                 return rates.sorted { $0.code < $1.code }
