@@ -37,8 +37,8 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         super.init(presenter: presenter)
         presenter.listener = self
         presenter.viewDidAppear
-            .bind { bool in
-                if bool && self.isFirstTimeLaunch {
+            .bind { didViewAppear in
+                if didViewAppear && self.isFirstTimeLaunch {
                     self.isFirstTimeLaunch.toggle()
                     self.router?.routeToLoggedIn()
                 }
