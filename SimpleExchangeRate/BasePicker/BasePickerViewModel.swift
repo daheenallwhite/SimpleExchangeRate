@@ -15,20 +15,19 @@ struct BasePickerViewModel {
     let baseCurrencyCode: BehaviorRelay<CurrencyCode> = BehaviorRelay(value: .USD)
     let exchangeRates: Driver<[Rate]>
     let lastUpdatedTime: Driver<String>
-//    let errorMessage: Signal<String>
     
-    private let exchangeRateAPI = ExchangeRateAPI.shared
+    private let exchangeRateAPI = ExchangeRateAPI.shared 
     
     init() {
-        // Todo: combine or merge viewWillAppear and baseCurrencySelected
-        // 그 때, exchangeRateAPI getRates 호출
-        
         let viewAppearDefault = viewWillAppear
             .map { _ in
                 return CurrencyCode.USD
             }
         
-        let dataStream = Observable.of(viewAppearDefault, baseCurrencyCode.asObservable()).merge()
+        let dataStream = Observable.merge(
+            viewAppearDefault,
+            baseCurrencyCode.asObservable()
+        ).throttle(.milliseconds(400), scheduler: MainScheduler.instance)
         
         let result = dataStream
             .flatMapLatest(exchangeRateAPI.getRates(for:))
