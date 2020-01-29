@@ -18,15 +18,11 @@ protocol BasePickerPresentableListener: class {
 }
 
 final class BasePickerViewController: UIViewController, BasePickerPresentable, BasePickerViewControllable {
-    
-    var viewWillAppear: Observable<Bool> {
-        return self.rx.viewWillAppear
-    }
-
     weak var listener: BasePickerPresentableListener?
 
-    static func instantiate() -> BasePickerViewController {
+    static func instantiate(with viewModel: BasePickerViewModel) -> BasePickerViewController {
         let instance = instantiate(storyboardName: "BasePickerViewController", identifier: "BasePickerViewController") as! BasePickerViewController
+        instance.viewModel = viewModel
         return instance
     }
     
@@ -36,8 +32,8 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     
     private let exchangeRateAPI = ExchangeRateAPI.shared
     private let bag = DisposeBag()
-    private let viewModel = BasePickerViewModel()
-       
+    var viewModel: BasePickerViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +42,18 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
                 return code.rawValue
             }.disposed(by: bag)
         
+        bind()
+   }
+
+    private func bind() {
+        guard let viewModel = self.viewModel else {
+            return
+        }
+        
+        viewWillAppear
+            .bind(to: viewModel.viewWillAppear)
+            .disposed(by: bag)
+        
         pickerView.rx.modelSelected(CurrencyCode.self)
             .map { (codes) -> CurrencyCode in
                 return codes[0]
@@ -53,13 +61,10 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
             .disposed(by: bag)
         
         viewModel.lastUpdatedTime
-        .drive(onNext: { time in
+            .drive(onNext: { time in
             self.timeLabel.text = time
-        }).disposed(by: bag)
-   }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+            })
+            .disposed(by: bag)
         
         viewModel.exchangeRates
             .drive(tableView.rx.items(cellIdentifier: "Cell")){ row, model, cell in
