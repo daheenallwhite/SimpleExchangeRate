@@ -71,11 +71,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-B8-qdt">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7xA-8D-28p" firstAttribute="trailing" secondItem="Pmn-2a-8wp" secondAttribute="trailing" id="Pku-X3-i9Z"/>
                             <constraint firstItem="Pmn-2a-8wp" firstAttribute="top" secondItem="YAf-5F-Blk" secondAttribute="top" id="X6z-PL-Flw"/>
+                            <constraint firstItem="P0w-B8-qdt" firstAttribute="centerX" secondItem="YAf-5F-Blk" secondAttribute="centerX" id="abO-Op-34s"/>
+                            <constraint firstItem="P0w-B8-qdt" firstAttribute="centerY" secondItem="YAf-5F-Blk" secondAttribute="centerY" id="aee-bd-eaW"/>
                             <constraint firstItem="Pmn-2a-8wp" firstAttribute="leading" secondItem="7xA-8D-28p" secondAttribute="leading" id="ahT-Wa-Mnf"/>
                             <constraint firstItem="7xA-8D-28p" firstAttribute="bottom" secondItem="mNk-HZ-hRI" secondAttribute="bottom" constant="6" id="bXi-sX-VfY"/>
                             <constraint firstItem="mNk-HZ-hRI" firstAttribute="leading" secondItem="7xA-8D-28p" secondAttribute="leading" id="hGw-o9-fY1"/>
@@ -86,6 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="7xA-8D-28p"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="P0w-B8-qdt" id="Mpg-5Z-d3J"/>
                         <outlet property="pickerView" destination="lwM-B2-A3x" id="tTv-A8-gNA"/>
                         <outlet property="tableView" destination="mNk-HZ-hRI" id="hVb-WQ-45c"/>
                         <outlet property="timeLabel" destination="F6k-uk-dvJ" id="xdq-S7-Oul"/>

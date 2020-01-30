@@ -29,6 +29,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let exchangeRateAPI = ExchangeRateAPI.shared
     private let bag = DisposeBag()
@@ -50,8 +51,8 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
             return
         }
         
-        viewWillAppear
-            .bind(to: viewModel.viewWillAppear)
+        viewDidAppear
+            .bind(to: viewModel.viewDidAppear)
             .disposed(by: bag)
         
         pickerView.rx.modelSelected(CurrencyCode.self)
@@ -66,11 +67,27 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
             })
             .disposed(by: bag)
         
+        viewModel.loading
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: bag)
+        
+        viewModel.loading
+            .drive(onNext: { isLoading in
+                self.activityIndicator.isHidden = !isLoading
+                self.tableView.isHidden = isLoading
+            }).disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let viewModel = self.viewModel else {
+            return
+        }
         viewModel.exchangeRates
             .drive(tableView.rx.items(cellIdentifier: "Cell")){ row, model, cell in
             cell.detailTextLabel?.text = model.rate
             cell.textLabel?.text = model.code
         }.disposed(by: bag)
     }
-    
 }
