@@ -8,8 +8,9 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 import RxAppState
-import UIKit
+import RxDataSources
 
 protocol BasePickerPresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -84,10 +85,25 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
         guard let viewModel = self.viewModel else {
             return
         }
-        viewModel.exchangeRates
-            .drive(tableView.rx.items(cellIdentifier: "Cell")){ row, model, cell in
-            cell.detailTextLabel?.text = model.rate
-            cell.textLabel?.text = model.code
-        }.disposed(by: bag)
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Rate>>(
+            configureCell: { (_, tableView, indexPath, rate: Rate) in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+                cell.textLabel?.text = rate.code
+                cell.detailTextLabel?.text = rate.rate
+                return cell
+            },
+            titleForHeaderInSection: { dataSource, sectionIndex in
+                let section = dataSource[sectionIndex]
+                return section.model
+            }
+        )
+        
+        viewModel.exchangeRates.map {
+            return [SectionModel(model: "\(viewModel.baseCurrencyCode.value)", items: $0)]
+        }.drive(tableView.rx.items(dataSource: dataSource))
+        .disposed(by: bag)
+
     }
+
 }
