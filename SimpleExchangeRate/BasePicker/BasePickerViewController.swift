@@ -36,6 +36,19 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     private let bag = DisposeBag()
     var viewModel: BasePickerViewModel?
     
+    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Rate>>(
+        configureCell: { (_, tableView, indexPath, rate: Rate) in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+            cell.textLabel?.text = rate.code
+            cell.detailTextLabel?.text = rate.rate
+            return cell
+        },
+        titleForHeaderInSection: { dataSource, sectionIndex in
+            let section = dataSource[sectionIndex]
+            return section.model
+        }
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
