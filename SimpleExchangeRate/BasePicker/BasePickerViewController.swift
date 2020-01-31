@@ -52,10 +52,6 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
             return
         }
         
-        viewDidAppear
-            .bind(to: viewModel.viewDidAppear)
-            .disposed(by: bag)
-        
         pickerView.rx.modelSelected(CurrencyCode.self)
             .map { (codes) -> CurrencyCode in
                 return codes[0]
@@ -71,39 +67,16 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
         viewModel.loading
             .drive(activityIndicator.rx.isAnimating)
             .disposed(by: bag)
-        
+
         viewModel.loading
             .drive(onNext: { isLoading in
-                self.activityIndicator.isHidden = !isLoading
                 self.tableView.isHidden = isLoading
             }).disposed(by: bag)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        guard let viewModel = self.viewModel else {
-            return
-        }
-        
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Rate>>(
-            configureCell: { (_, tableView, indexPath, rate: Rate) in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-                cell.textLabel?.text = rate.code
-                cell.detailTextLabel?.text = rate.rate
-                return cell
-            },
-            titleForHeaderInSection: { dataSource, sectionIndex in
-                let section = dataSource[sectionIndex]
-                return section.model
-            }
-        )
         
         viewModel.exchangeRates.map {
             return [SectionModel(model: "\(viewModel.baseCurrencyCode.value)", items: $0)]
         }.drive(tableView.rx.items(dataSource: dataSource))
         .disposed(by: bag)
-
     }
 
 }

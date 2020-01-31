@@ -11,26 +11,15 @@ import RxCocoa
 import RxSwift
 
 struct BasePickerViewModel {
-    let viewDidAppear = PublishSubject<Bool>()
     let baseCurrencyCode: BehaviorRelay<CurrencyCode> = BehaviorRelay(value: .USD)
     let exchangeRates: Driver<[Rate]>
     let lastUpdatedTime: Driver<String>
     let loading: Driver<Bool>
     
-    private let exchangeRateAPI = ExchangeRateAPI.shared 
+    private let exchangeRateAPI = ExchangeRateAPI.shared
     
     init() {
-        let viewAppearDefault = viewDidAppear
-            .map { _ in
-                return CurrencyCode.USD
-            }
-        
-        let dataStream = Observable.merge(
-            viewAppearDefault,
-            baseCurrencyCode.asObservable()
-        ).throttle(.milliseconds(400), scheduler: MainScheduler.instance)
-        
-        let result = dataStream
+        let result = baseCurrencyCode
             .flatMapLatest(exchangeRateAPI.getRates(for:))
             .asObservable()
         
@@ -57,9 +46,10 @@ struct BasePickerViewModel {
             }).asDriver(onErrorJustReturn: "")
         
         self.loading = Observable.merge(
-            dataStream.map { _ in true},
+            baseCurrencyCode.map { _ in true},
             successData.map { _ in false}
         ).startWith(true)
         .asDriver(onErrorJustReturn: false)
+        
     }
 }
