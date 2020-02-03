@@ -51,7 +51,7 @@ final class BasePickerViewController: UIViewController, BasePickerPresentable, B
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "BasePicker"
         Observable.just(CurrencyCode.allCases)
             .bind(to: pickerView.rx.itemTitles) { _, code in
                 return code.rawValue
