@@ -19,4 +19,14 @@ protocol SearchPresentableListener: class {
 final class SearchViewController: UIViewController, SearchPresentable, SearchViewControllable {
 
     weak var listener: SearchPresentableListener?
+    
+    static func instantiate() -> SearchViewController {
+        let instance = instantiate(storyboardName: "SearchViewController", identifier: "SearchViewController") as! SearchViewController
+        return instance
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Search"
+    }
 }
