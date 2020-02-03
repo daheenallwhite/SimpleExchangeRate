@@ -15,7 +15,7 @@ protocol LoggedInDependencySearch: Dependency {
     // for the Search scope.
 }
 
-//extension LoggedInComponent: SearchDependency {
-//
-//    // TODO: Implement properties to provide for Search scope.
-//}
+extension LoggedInComponent: SearchDependency {
+
+    // TODO: Implement properties to provide for Search scope.
+}

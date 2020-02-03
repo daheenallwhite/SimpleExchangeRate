@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol LoggedInInteractable: Interactable, BasePickerListener {
+protocol LoggedInInteractable: Interactable, BasePickerListener, SearchListener {
     var router: LoggedInRouting? { get set }
     var listener: LoggedInListener? { get set }
 }
@@ -20,12 +20,16 @@ protocol LoggedInViewControllable: ViewControllable {
 final class LoggedInRouter: ViewableRouter<LoggedInInteractable, LoggedInViewControllable>, LoggedInRouting {
     
     private let basePickerBuilder: BasePickerBuildable
+    private let searchBuilder: SearchBuildable
+    private var child: ViewableRouting?
     
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: LoggedInInteractable,
          viewController: LoggedInViewControllable,
-         basePickerBuilder: BasePickerBuildable) {
+         basePickerBuilder: BasePickerBuildable,
+         searchBuilder: SearchBuildable) {
         self.basePickerBuilder = basePickerBuilder
+        self.searchBuilder = searchBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
@@ -33,6 +37,20 @@ final class LoggedInRouter: ViewableRouter<LoggedInInteractable, LoggedInViewCon
     func routeToBasePicker() {
         let basePicker = basePickerBuilder.build(withListener: interactor)
         attachChild(basePicker)
+        child = basePicker
         viewController.push(basePicker.viewControllable)
+    }
+    
+    func routeToSearch() {
+        let search = searchBuilder.build(withListener: interactor)
+        attachChild(search)
+        child = search
+        viewController.push(search.viewControllable)
+    }
+    
+    private func detachCurrentChild() {
+        if let currentChild = child {
+            detachChild(currentChild)
+        }
     }
 }

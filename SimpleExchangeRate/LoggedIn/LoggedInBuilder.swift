@@ -36,8 +36,10 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         let interactor = LoggedInInteractor(presenter: viewController)
         interactor.listener = listener
         let basePickerBuilder = BasePickerBuilder(dependency: component)
+        let searchBuilder = SearchBuilder(dependency: component)
         return LoggedInRouter(interactor: interactor,
                               viewController: viewController,
-                              basePickerBuilder: basePickerBuilder)
+                              basePickerBuilder: basePickerBuilder,
+                              searchBuilder: searchBuilder)
     }
 }

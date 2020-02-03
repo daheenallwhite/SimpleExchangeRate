@@ -53,7 +53,14 @@ extension LoggedInViewController: UITableViewDataSource {
 
 extension LoggedInViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        listener?.didSelectBasePicker()
+        let selectedRow = indexPath.row
+        switch menu[selectedRow] {
+        case "Search":
+            listener?.didSelectSearch()
+        default:
+            listener?.didSelectBasePicker()
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
