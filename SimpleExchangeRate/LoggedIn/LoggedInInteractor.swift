@@ -11,6 +11,7 @@ import RxSwift
 
 protocol LoggedInRouting: ViewableRouting {
     func routeToBasePicker()
+    func routeToSearch()
 }
 
 protocol LoggedInPresentable: Presentable {
@@ -49,7 +50,7 @@ final class LoggedInInteractor: PresentableInteractor<LoggedInPresentable>, Logg
     }
     
     func didSelectSearch() {
-        
+        router?.routeToSearch()
     }
     
     func didSelectConversion() {
