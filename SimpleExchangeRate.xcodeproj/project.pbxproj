@@ -28,6 +28,11 @@
 		C20200BF23BE345F00C83D3F /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200BE23BE345F00C83D3F /* ResultData.swift */; };
 		C20200C223BE34DB00C83D3F /* CurrencyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200C123BE34DB00C83D3F /* CurrencyCode.swift */; };
 		C20200C423BE352600C83D3F /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20200C323BE352600C83D3F /* Rate.swift */; };
+		C27F2E5923E852EB007A21FC /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F2E5423E852EB007A21FC /* SearchRouter.swift */; };
+		C27F2E5A23E852EB007A21FC /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27F2E5523E852EB007A21FC /* SearchViewController.storyboard */; };
+		C27F2E5B23E852EB007A21FC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F2E5623E852EB007A21FC /* SearchViewController.swift */; };
+		C27F2E5C23E852EB007A21FC /* SearchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F2E5723E852EB007A21FC /* SearchBuilder.swift */; };
+		C27F2E5D23E852EB007A21FC /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F2E5823E852EB007A21FC /* SearchInteractor.swift */; };
 		C2A8882223C6156500321BCC /* BasePickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8881E23C6156500321BCC /* BasePickerRouter.swift */; };
 		C2A8882323C6156500321BCC /* BasePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8881F23C6156500321BCC /* BasePickerViewController.swift */; };
 		C2A8882423C6156500321BCC /* BasePickerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8882023C6156500321BCC /* BasePickerBuilder.swift */; };
@@ -65,6 +70,11 @@
 		C20200BE23BE345F00C83D3F /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		C20200C123BE34DB00C83D3F /* CurrencyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCode.swift; sourceTree = "<group>"; };
 		C20200C323BE352600C83D3F /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		C27F2E5423E852EB007A21FC /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		C27F2E5523E852EB007A21FC /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		C27F2E5623E852EB007A21FC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C27F2E5723E852EB007A21FC /* SearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBuilder.swift; sourceTree = "<group>"; };
+		C27F2E5823E852EB007A21FC /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		C2A8881E23C6156500321BCC /* BasePickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerRouter.swift; sourceTree = "<group>"; };
 		C2A8881F23C6156500321BCC /* BasePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerViewController.swift; sourceTree = "<group>"; };
 		C2A8882023C6156500321BCC /* BasePickerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerBuilder.swift; sourceTree = "<group>"; };
@@ -159,6 +169,7 @@
 				43F4B0E823C30B840089292D /* Root */,
 				43F4B0F323C325BE0089292D /* LoggedIn */,
 				C2A8881D23C614D200321BCC /* BasePicker */,
+				C27F2E5323E851AE007A21FC /* Search */,
 				C20200C523BE356300C83D3F /* Resource */,
 				C20200C023BE34C900C83D3F /* Network */,
 				C20200BD23BE345500C83D3F /* Model */,
@@ -192,6 +203,18 @@
 				C20200AE23BE210500C83D3F /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		C27F2E5323E851AE007A21FC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C27F2E5423E852EB007A21FC /* SearchRouter.swift */,
+				C27F2E5523E852EB007A21FC /* SearchViewController.storyboard */,
+				C27F2E5623E852EB007A21FC /* SearchViewController.swift */,
+				C27F2E5723E852EB007A21FC /* SearchBuilder.swift */,
+				C27F2E5823E852EB007A21FC /* SearchInteractor.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		C2A8881D23C614D200321BCC /* BasePicker */ = {
@@ -279,6 +302,7 @@
 				C2A8882D23C6195500321BCC /* BasePickerViewController.storyboard in Resources */,
 				C20200B023BE210500C83D3F /* LaunchScreen.storyboard in Resources */,
 				C20200AD23BE210500C83D3F /* Assets.xcassets in Resources */,
+				C27F2E5A23E852EB007A21FC /* SearchViewController.storyboard in Resources */,
 				C2A8882B23C6177C00321BCC /* LoggedInViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +359,8 @@
 				43F4B0ED23C30B9E0089292D /* RootRouter.swift in Sources */,
 				C2A8882723C615E200321BCC /* LoggedInComponent+BasePicker.swift in Sources */,
 				43F4B10623C45A9A0089292D /* BasePickerViewModel.swift in Sources */,
+				C27F2E5C23E852EB007A21FC /* SearchBuilder.swift in Sources */,
+				C27F2E5B23E852EB007A21FC /* SearchViewController.swift in Sources */,
 				C20200BC23BE252400C83D3F /* ExchangeRateAPI.swift in Sources */,
 				43F4B0F023C30B9E0089292D /* RootInteractor.swift in Sources */,
 				43F4B10223C329CE0089292D /* UIViewController.swift in Sources */,
@@ -344,6 +370,8 @@
 				43F4B0EE23C30B9E0089292D /* RootViewController.swift in Sources */,
 				C20200C423BE352600C83D3F /* Rate.swift in Sources */,
 				C2A8882323C6156500321BCC /* BasePickerViewController.swift in Sources */,
+				C27F2E5D23E852EB007A21FC /* SearchInteractor.swift in Sources */,
+				C27F2E5923E852EB007A21FC /* SearchRouter.swift in Sources */,
 				43F4B0F923C325D70089292D /* LoggedInViewController.swift in Sources */,
 				43F4B10023C327FC0089292D /* ViewControllable.swift in Sources */,
 				43F4B0F223C30BF50089292D /* AppComponent.swift in Sources */,
